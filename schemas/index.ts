@@ -64,3 +64,23 @@ export const NewPasswordSchema = z.object({
     message: "Minimum 6 characters required",
   }),
 });
+
+export const InvoiceSchema = z.object({
+  name: z.string().min(2).max(50),
+  address: z.string(),
+  date: z.date(),
+  receiptType: z.string(),
+  number: z.number(),
+  customerName: z.string().min(2).max(50),
+  customerAddress: z.string(),
+  products: z.array(
+    z.object({
+      name: z.string().min(2).max(50),
+      price: z.number(),
+      quantity: z.number(),
+    })
+  ),
+  discount: z.number(),
+  tax: z.number(),
+  note: z.string(),
+});

@@ -2,6 +2,7 @@
 import { SignOut } from "@/actions/signout";
 import { Button } from "@/components/ui/button";
 import { useCurrentUser } from "@/hooks/useCurrentUser";
+import { Dashboard } from "../_components/Dashboard";
 
 const DashboardPage = () => {
   const user = useCurrentUser();
@@ -10,7 +11,7 @@ const DashboardPage = () => {
   };
   return (
     <div className="h-full flex flex-col items-center justify-center">
-      DashBoard
+      <Dashboard />
     </div>
   );
 };

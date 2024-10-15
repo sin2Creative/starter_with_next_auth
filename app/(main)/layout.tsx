@@ -11,9 +11,9 @@ export default async function MainLayout({
   const session = await auth();
   return (
     <SessionProvider session={session}>
-      <div className="h-full w-full flex flex-col gap-y-10 items-center justify-center bg-sky-400">
+      <div className="h-full w-full">
         <MainNavbar />
-        {children}
+        <div className="mt-14">{children}</div>
       </div>
     </SessionProvider>
   );
